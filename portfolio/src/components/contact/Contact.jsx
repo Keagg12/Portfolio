@@ -2,13 +2,25 @@ import { useState } from 'react'
 
 export default function Contact({ onSend }){
   const [sending, setSending] = useState(false)
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
+  const [email, setEmail] = useState('')
+  const [subject, setSubject] = useState('')
+  const [message, setMessage] = useState('')
 
   function handleSubmit(e){
     e && e.preventDefault()
+
+    const mailSubject = subject.trim() || `Portfolio message from ${firstName} ${lastName}`
+    const mailBody = `Name: ${firstName} ${lastName}\nEmail: ${email}\n\n${message}`
+    const mailto = `mailto:Keshavaggarwal1232@gmail.com?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`
+
     setSending(true)
+    window.open(mailto, '_self')
+
     setTimeout(()=>{
       setSending(false)
-      if (onSend) onSend()
+      if (onSend) onSend('📨 Opening your email client...')
     }, 1400)
   }
 
@@ -71,29 +83,32 @@ export default function Contact({ onSend }){
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
                 <div>
                   <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: 'var(--muted)', marginBottom: 8 }}>First Name</label>
-                  <input type="text" className="contact-input" placeholder="Rahul" />
+                  <input type="text" className="contact-input" placeholder="Rahul" value={firstName} onChange={e => setFirstName(e.target.value)} />
                 </div>
                 <div>
                   <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: 'var(--muted)', marginBottom: 8 }}>Last Name</label>
-                  <input type="text" className="contact-input" placeholder="Sharma" />
+                  <input type="text" className="contact-input" placeholder="Sharma" value={lastName} onChange={e => setLastName(e.target.value)} />
                 </div>
               </div>
               <div style={{ marginBottom: 16 }}>
                 <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: 'var(--muted)', marginBottom: 8 }}>Email Address</label>
-                <input type="email" className="contact-input" placeholder="recruiter@company.com" />
+                <input type="email" className="contact-input" placeholder="recruiter@company.com" value={email} onChange={e => setEmail(e.target.value)} />
               </div>
               <div style={{ marginBottom: 16 }}>
                 <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: 'var(--muted)', marginBottom: 8 }}>Subject</label>
-                <input type="text" className="contact-input" placeholder="Internship Opportunity at XYZ Company" />
+                <input type="text" className="contact-input" placeholder="Internship Opportunity at XYZ Company" value={subject} onChange={e => setSubject(e.target.value)} />
               </div>
               <div style={{ marginBottom: 24 }}>
                 <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: 'var(--muted)', marginBottom: 8 }}>Message</label>
-                <textarea className="contact-input" rows={5} placeholder="Hi Keshav, I came across your portfolio and would love to discuss an internship opportunity..." style={{ resize: 'vertical', minHeight: 120 }}></textarea>
+                <textarea className="contact-input" rows={5} placeholder="Hi Keshav, I came across your portfolio and would love to discuss an internship opportunity..." style={{ resize: 'vertical', minHeight: 120 }} value={message} onChange={e => setMessage(e.target.value)}></textarea>
               </div>
               <button className="btn-primary w-full" type="submit" style={{ width: '100%', justifyContent: 'center', padding: 14 }}>
                 <span id="btn-text">{sending ? 'Sending...' : 'Send Message'}</span>
                 <svg id="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}><path d="M22 2L11 13M22 2L15 22 11 13 2 9l20-7z"/></svg>
               </button>
+              <p style={{ fontSize: 13, color: 'var(--muted)', marginTop: 16, lineHeight: 1.6 }}>
+                If an email app does not open, please use the email card on the left or send directly to <strong>keshavaggarwal1232@gmail.com</strong>.
+              </p>
             </form>
           </div>
         </div>

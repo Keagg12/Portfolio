@@ -80,20 +80,10 @@ export default function Hero() {
             <div className="flex flex-wrap gap-3 animate-in" style={{ animationDelay: '0.4s' }}>
               <a href="#projects" className="btn-primary"><span>View Projects</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
               <a href="#contact" className="btn-outline">Contact Me</a>
-              <button className="btn-ghost" onClick={() => {
-                const toast = document.getElementById('toast')
-                if (toast) {
-                  toast.textContent = '📄 Resume download will be available soon!'
-                  toast.classList.add('show')
-                  setTimeout(() => {
-                    toast.classList.remove('show')
-                    toast.textContent = "✅ Message sent! I'll get back to you soon."
-                  }, 3000)
-                }
-              }}>
+              <a href="/resume.pdf" download className="btn-ghost">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
                 Resume
-              </button>
+              </a>
             </div>
             <div className="flex gap-4 mt-8 animate-in" style={{ animationDelay: '0.5s' }}>
               <a href="mailto:Keshavaggarwal1232@gmail.com" className="social-icon" style={{ color: 'var(--muted)', transition: 'color 0.3s', display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 13, textDecoration: 'none' }}>

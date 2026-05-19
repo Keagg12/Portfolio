@@ -38,10 +38,7 @@ export default function About(){
             </div>
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
               <a href="#contact" className="btn-primary"><span>Let's Connect</span></a>
-              <button className="btn-outline" onClick={() => {
-                const toast = document.getElementById('toast')
-                if (toast) { toast.textContent = '📄 Resume download will be available soon!'; toast.classList.add('show'); setTimeout(() => { toast.classList.remove('show'); toast.textContent = "✅ Message sent! I'll get back to you soon." }, 3000) }
-              }}>Download CV</button>
+              <a href="/resume.pdf" download className="btn-outline">Download CV</a>
             </div>
           </div>
           <div className="animate-in" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 24 }}>
