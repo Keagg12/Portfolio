@@ -1,0 +1,38 @@
+export const experienceData = [
+  {
+    icon: '🎮',
+    title: 'Discord Community Manager',
+    subtitle: 'Tech Developer Community · Remote',
+    period: '2023 – Present',
+    description: 'Managed and grew a developer community of 500+ members. Organized weekly coding challenges, tech discussions, and resource sharing sessions to foster a collaborative learning environment.',
+    tags: ['Community Building', 'Event Management', 'Leadership'],
+    accent: 'var(--cyan)',
+  },
+  {
+    icon: '👥',
+    title: 'Team Lead & Collaborator',
+    subtitle: 'Academic & Project Teams · BVCOE',
+    period: '2024 – Present',
+    description: 'Led cross-functional teams in building college projects. Coordinated task delegation, code reviews, and timely delivery while collaborating with diverse teammates.',
+    tags: ['Team Leadership', 'Agile Workflow', 'Communication'],
+    accent: 'var(--violet)',
+  },
+  {
+    icon: '🏆',
+    title: 'Technical Events & Hackathons',
+    subtitle: 'Competitive Programming & Events',
+    period: '2024 – Present',
+    description: 'Actively participated in hackathons and coding competitions. Applied problem-solving skills under pressure and helped build innovative solutions with tight deadlines.',
+    tags: ['Hackathons', 'CP Contests', 'Problem Solving'],
+    accent: '#f59e0b',
+  },
+  {
+    icon: '🎓',
+    title: 'B.Tech Computer Science Engineering',
+    subtitle: 'Bharati Vidyapeeth College of Engineering, GGSIPU',
+    period: '2024 – 2028',
+    description: 'Currently pursuing B.Tech in Computer Science with a focus on CS fundamentals, data structures, algorithms, software engineering principles, and project development.',
+    tags: ['Computer Science', 'GGSIPU', 'Batch 2028'],
+    accent: '#10b981',
+  },
+]

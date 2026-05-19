@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Keshav Aggarwal - Aspiring Software Developer | Frontend & Full-Stack Developer | DSA Enthusiast | Future ML Engineer"/>
+<meta name="keywords" content="Keshav Aggarwal, Software Developer, Frontend Developer, Full-Stack, DSA, React, JavaScript"/>
+<meta property="og:title" content="Keshav Aggarwal | Software Developer Portfolio"/>
+<meta property="og:description" content="B.Tech CS Student | Frontend & Full-Stack Developer | DSA Enthusiast"/>
+<title>Keshav Aggarwal | Software Developer Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        display: ['Sora', 'sans-serif'],
+        body: ['Plus Jakarta Sans', 'sans-serif'],
+        mono: ['JetBrains Mono', 'monospace'],
+      },
+      colors: {
+        bg: { DEFAULT: '#070b14', secondary: '#0d1426', card: '#0f1729', border: '#1e2d4a' },
+        cyan: { DEFAULT: '#06b6d4', light: '#22d3ee', dim: '#0e7490' },
+        violet: { DEFAULT: '#8b5cf6', light: '#a78bfa', dim: '#5b21b6' },
+        accent: '#f0abfc',
+      },
+      animation: {
+        'float': 'float 6s ease-in-out infinite',
+        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'spin-slow': 'spin 20s linear infinite',
+        'fade-up': 'fadeUp 0.6s ease forwards',
+        'blink': 'blink 1s step-end infinite',
+      },
+      keyframes: {
+        float: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-20px)' } },
+        fadeUp: { from: { opacity: 0, transform: 'translateY(30px)' }, to: { opacity: 1, transform: 'translateY(0)' } },
+        blink: { '0%,100%': { opacity: 1 }, '50%': { opacity: 0 } },
+      }
+    }
+  }
+}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cyan:#06b6d4;--violet:#8b5cf6;--pink:#f0abfc;
+  --bg:#070b14;--bg2:#0d1426;--card:#0f1729;
+  --text:#e2e8f0;--muted:#94a3b8;--border:#1e2d4a;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',sans-serif;overflow-x:hidden}
+::selection{background:rgba(6,182,212,0.3);color:#fff}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--cyan),var(--violet));border-radius:2px}
+
+/* SCROLL PROGRESS */
+#progress-bar{position:fixed;top:0;left:0;height:2px;z-index:1000;background:linear-gradient(90deg,var(--cyan),var(--violet),var(--pink));width:0%;transition:width 0.1s linear}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:999;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid transparent;transition:all 0.3s}
+nav.scrolled{background:rgba(7,11,20,0.85);border-bottom-color:var(--border)}
+.nav-link{position:relative;color:var(--muted);transition:color 0.3s;font-size:14px;font-weight:500}
+.nav-link::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:linear-gradient(90deg,var(--cyan),var(--violet));transition:width 0.3s}
+.nav-link:hover{color:var(--cyan)}
+.nav-link:hover::after,.nav-link.active::after{width:100%}
+.nav-link.active{color:var(--cyan)}
+
+/* GRADIENT TEXT */
+.grad{background:linear-gradient(135deg,var(--cyan) 0%,var(--violet) 50%,var(--pink) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.grad-cv{background:linear-gradient(135deg,var(--cyan),#22d3ee);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.grad-vp{background:linear-gradient(135deg,var(--violet),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* BUTTONS */
+.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:8px;font-weight:600;font-size:14px;background:linear-gradient(135deg,var(--cyan),var(--violet));color:#fff;cursor:pointer;transition:all 0.3s;border:none;text-decoration:none;position:relative;overflow:hidden}
+.btn-primary::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--violet),var(--pink));opacity:0;transition:opacity 0.3s}
+.btn-primary:hover::before{opacity:1}
+.btn-primary span{position:relative;z-index:1}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(6,182,212,0.35)}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;padding:11px 28px;border-radius:8px;font-weight:600;font-size:14px;background:transparent;color:var(--cyan);cursor:pointer;transition:all 0.3s;border:1px solid rgba(6,182,212,0.5);text-decoration:none}
+.btn-outline:hover{background:rgba(6,182,212,0.1);transform:translateY(-2px);border-color:var(--cyan);box-shadow:0 0 20px rgba(6,182,212,0.2)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;padding:11px 28px;border-radius:8px;font-weight:600;font-size:14px;background:transparent;color:var(--muted);cursor:pointer;transition:all 0.3s;border:1px solid var(--border);text-decoration:none}
+.btn-ghost:hover{color:var(--text);border-color:rgba(139,92,246,0.5);background:rgba(139,92,246,0.08);transform:translateY(-2px)}
+
+/* HERO */
+#home{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden}
+canvas#particles{position:absolute;inset:0;pointer-events:none}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;animation:float 6s ease-in-out infinite}
+.orb1{width:500px;height:500px;background:radial-gradient(circle,rgba(6,182,212,0.15),transparent 70%);top:-100px;right:-100px;animation-delay:0s}
+.orb2{width:400px;height:400px;background:radial-gradient(circle,rgba(139,92,246,0.15),transparent 70%);bottom:-50px;left:-50px;animation-delay:2s}
+.orb3{width:300px;height:300px;background:radial-gradient(circle,rgba(240,171,252,0.1),transparent 70%);top:50%;left:50%;animation-delay:4s}
+
+.typing-wrapper{display:inline-flex;align-items:center;gap:4px;font-family:'JetBrains Mono',monospace}
+.cursor{display:inline-block;width:2px;height:1.1em;background:var(--cyan);animation:blink 1s step-end infinite;vertical-align:middle}
+
+/* SECTION */
+section{padding:100px 0}
+.section-label{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--cyan);letter-spacing:3px;text-transform:uppercase;margin-bottom:12px}
+.section-title{font-family:'Sora',sans-serif;font-size:clamp(32px,5vw,52px);font-weight:800;line-height:1.1;margin-bottom:20px}
+.section-sub{color:var(--muted);max-width:540px;line-height:1.7}
+.section-divider{width:60px;height:3px;background:linear-gradient(90deg,var(--cyan),var(--violet));border-radius:2px;margin-bottom:20px}
+
+/* ABOUT CARDS */
+.about-stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center;transition:all 0.3s}
+.about-stat:hover{border-color:rgba(6,182,212,0.4);transform:translateY(-4px);box-shadow:0 8px 30px rgba(6,182,212,0.1)}
+
+/* SKILLS */
+.skill-bar-wrap{background:rgba(255,255,255,0.05);border-radius:999px;height:6px;overflow:hidden}
+.skill-bar{height:100%;border-radius:999px;width:0%;transition:width 1.5s cubic-bezier(0.4,0,0.2,1);background:linear-gradient(90deg,var(--cyan),var(--violet))}
+.skill-tag{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:8px;background:var(--card);border:1px solid var(--border);font-size:14px;font-weight:500;transition:all 0.3s;cursor:default}
+.skill-tag:hover{border-color:var(--cyan);color:var(--cyan);background:rgba(6,182,212,0.05);transform:translateY(-2px)}
+.skill-category{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;transition:all 0.3s}
+.skill-category:hover{border-color:rgba(139,92,246,0.4);box-shadow:0 0 30px rgba(139,92,246,0.08)}
+
+/* PROJECT CARDS */
+.project-card{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:all 0.4s cubic-bezier(0.4,0,0.2,1);position:relative;cursor:default}
+.project-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(6,182,212,0.05),rgba(139,92,246,0.05));opacity:0;transition:opacity 0.4s}
+.project-card:hover{transform:translateY(-8px);border-color:rgba(6,182,212,0.4);box-shadow:0 20px 60px rgba(6,182,212,0.1)}
+.project-card:hover::before{opacity:1}
+.tech-badge{display:inline-block;padding:4px 10px;border-radius:6px;font-size:12px;font-weight:600;background:rgba(6,182,212,0.1);color:var(--cyan);border:1px solid rgba(6,182,212,0.2);font-family:'JetBrains Mono',monospace}
+.project-link{width:36px;height:36px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.05);border:1px solid var(--border);color:var(--muted);transition:all 0.3s;text-decoration:none}
+.project-link:hover{background:rgba(6,182,212,0.15);border-color:var(--cyan);color:var(--cyan);transform:scale(1.1)}
+
+/* EXPERIENCE */
+.timeline-item{position:relative;padding-left:48px;padding-bottom:40px}
+.timeline-item::before{content:'';position:absolute;left:15px;top:28px;bottom:0;width:1px;background:linear-gradient(180deg,var(--cyan),transparent)}
+.timeline-item:last-child::before{display:none}
+.timeline-dot{position:absolute;left:0;top:4px;width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--violet));display:flex;align-items:center;justify-content:center;font-size:14px;box-shadow:0 0 20px rgba(6,182,212,0.4)}
+.timeline-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;transition:all 0.3s}
+.timeline-card:hover{border-color:rgba(6,182,212,0.3);transform:translateX(4px)}
+
+/* CONTACT */
+.contact-input{width:100%;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 18px;color:var(--text);font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;transition:all 0.3s;outline:none}
+.contact-input::placeholder{color:var(--muted)}
+.contact-input:focus{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(6,182,212,0.1)}
+.contact-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 24px;display:flex;align-items:center;gap:16px;transition:all 0.3s;text-decoration:none;color:var(--text)}
+.contact-card:hover{border-color:var(--cyan);transform:translateX(4px);background:rgba(6,182,212,0.04)}
+
+/* NOISE OVERLAY */
+.noise{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:0.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")}
+
+/* GRID DOTS BG */
+.dot-grid{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,0.06) 1px,transparent 1px);background-size:32px 32px;pointer-events:none}
+
+/* GLOWING CARD BORDER */
+.glow-border{position:relative;border-radius:16px}
+.glow-border::before{content:'';position:absolute;inset:-1px;border-radius:17px;background:linear-gradient(135deg,rgba(6,182,212,0.6),rgba(139,92,246,0.6),rgba(240,171,252,0.6));z-index:-1;opacity:0;transition:opacity 0.3s}
+.glow-border:hover::before{opacity:1}
+
+/* FLOATING ICONS */
+@keyframes float{0%,100%{transform:translateY(0px)}50%{transform:translateY(-20px)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideIn{from{opacity:0;transform:translateX(-20px)}to{opacity:1;transform:translateX(0)}}
+@keyframes scaleIn{from{opacity:0;transform:scale(0.9)}to{opacity:1;transform:scale(1)}}
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+
+.animate-in{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
+.animate-in.visible{opacity:1;transform:translateY(0)}
+.animate-in-left{opacity:0;transform:translateX(-30px);transition:opacity 0.7s ease,transform 0.7s ease}
+.animate-in-left.visible{opacity:1;transform:translateX(0)}
+.animate-scale{opacity:0;transform:scale(0.9);transition:opacity 0.5s ease,transform 0.5s ease}
+.animate-scale.visible{opacity:1;transform:scale(1)}
+
+/* HERO CODE BLOCK */
+.code-block{background:rgba(13,20,38,0.8);border:1px solid var(--border);border-radius:12px;padding:20px 24px;font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.8;position:relative;overflow:hidden}
+.code-block::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,var(--cyan),var(--violet))}
+.code-window{display:flex;gap:6px;margin-bottom:14px}
+.code-dot{width:10px;height:10px;border-radius:50%}
+.kw{color:#c792ea}.fn{color:#82aaff}.str{color:#c3e88d}.num{color:#f78c6c}.cm{color:#546e7a}.op{color:var(--cyan)}.var{color:#eeffff}
+
+/* FOOTER */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 0}
+
+/* MOBILE NAV */
+.mobile-menu{position:fixed;inset:0;background:rgba(7,11,20,0.98);z-index:9998;display:none;flex-direction:column;align-items:center;justify-content:center;gap:32px;backdrop-filter:blur(20px)}
+.mobile-menu.open{display:flex}
+.mobile-link{font-family:'Sora',sans-serif;font-size:28px;font-weight:700;color:var(--muted);transition:color 0.3s;text-decoration:none}
+.mobile-link:hover{color:var(--cyan)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  section{padding:70px 0}
+  .hero-code{display:none}
+  .about-grid{grid-template-columns:1fr!important}
+}
+
+/* AVATAR RING */
+.avatar-ring{width:160px;height:160px;border-radius:50%;position:relative;flex-shrink:0}
+.avatar-ring::before{content:'';position:absolute;inset:-3px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--violet),var(--pink));z-index:0;animation:spin-slow 8s linear infinite}
+@keyframes spin-slow{to{transform:rotate(360deg)}}
+.avatar-inner{width:100%;height:100%;border-radius:50%;background:linear-gradient(135deg,#0d1f3c,#1a1040);display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-size:48px;font-weight:800;position:relative;z-index:1;margin:3px;border:3px solid var(--bg)}
+
+/* NUMBER COUNTER */
+.counter-num{font-family:'Sora',sans-serif;font-size:36px;font-weight:800}
+
+/* SCROLL TO TOP */
+#scroll-top{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--violet));display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transition:all 0.3s;z-index:500;color:#fff;border:none;font-size:18px}
+#scroll-top.show{opacity:1}
+#scroll-top:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(6,182,212,0.4)}
+
+/* TOAST */
+#toast{position:fixed;bottom:90px;right:30px;background:var(--card);border:1px solid var(--cyan);border-radius:10px;padding:12px 20px;color:var(--text);font-size:14px;z-index:1000;opacity:0;transform:translateY(10px);transition:all 0.3s;pointer-events:none}
+#toast.show{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+<div class="noise"></div>
+<div id="progress-bar"></div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="#home" class="font-display font-bold text-xl text-white" style="text-decoration:none">
+      <span class="grad">KA</span><span style="color:var(--muted)">.dev</span>
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
+    <div class="hidden md:block">
+      <a href="#contact" class="btn-primary text-sm py-2 px-5" style="font-size:13px;padding:9px 20px">
+        <span>Hire Me</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <button id="menu-toggle" class="md:hidden flex flex-col gap-1.5 p-2" style="background:none;border:none;cursor:pointer">
+      <span class="menu-bar" style="display:block;width:22px;height:2px;background:var(--text);transition:all 0.3s;border-radius:2px"></span>
+      <span class="menu-bar" style="display:block;width:22px;height:2px;background:var(--text);transition:all 0.3s;border-radius:2px"></span>
+      <span class="menu-bar" style="display:block;width:22px;height:2px;background:var(--text);transition:all 0.3s;border-radius:2px"></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home" class="mobile-link" onclick="closeMobile()">Home</a>
+  <a href="#about" class="mobile-link" onclick="closeMobile()">About</a>
+  <a href="#skills" class="mobile-link" onclick="closeMobile()">Skills</a>
+  <a href="#projects" class="mobile-link" onclick="closeMobile()">Projects</a>
+  <a href="#experience" class="mobile-link" onclick="closeMobile()">Experience</a>
+  <a href="#contact" class="mobile-link" onclick="closeMobile()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="home">
+  <canvas id="particles"></canvas>
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="orb orb3"></div>
+  <div class="max-w-7xl mx-auto px-6 w-full relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(6,182,212,0.1);border:1px solid rgba(6,182,212,0.3);border-radius:999px;padding:6px 16px;margin-bottom:28px;font-size:13px;color:var(--cyan);font-family:'JetBrains Mono',monospace" class="animate-in">
+          <span style="width:6px;height:6px;border-radius:50%;background:var(--cyan);animation:pulse 1.5s infinite;display:inline-block"></span>
+          Available for Internships &amp; Opportunities
+        </div>
+        <h1 class="font-display font-extrabold leading-none mb-4 animate-in" style="font-size:clamp(42px,6vw,80px);animation-delay:0.1s">
+          Hi, I'm<br><span class="grad" style="display:inline-block">Keshav</span><br><span style="color:var(--text)">Aggarwal</span>
+        </h1>
+        <div class="animate-in mb-6" style="animation-delay:0.2s">
+          <p style="font-size:clamp(14px,2vw,18px);color:var(--muted);font-family:'JetBrains Mono',monospace">
+            &gt;&nbsp;<span id="typed-text" style="color:var(--cyan)"></span><span class="cursor"></span>
+          </p>
+        </div>
+        <p class="animate-in mb-8" style="color:var(--muted);font-size:16px;line-height:1.7;max-width:500px;animation-delay:0.3s">
+          B.Tech CSE student at Bharati Vidyapeeth (GGSIPU), building scalable frontends, diving deep into full-stack development, solving 200+ DSA problems, and moving toward ML Engineering.
+        </p>
+        <div class="flex flex-wrap gap-3 animate-in" style="animation-delay:0.4s">
+          <a href="#projects" class="btn-primary"><span>View Projects</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="#contact" class="btn-outline">Contact Me</a>
+          <button class="btn-ghost" onclick="downloadResume()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Resume
+          </button>
+        </div>
+        <div class="flex gap-4 mt-8 animate-in" style="animation-delay:0.5s">
+          <a href="mailto:Keshavaggarwal1232@gmail.com" class="social-icon" style="color:var(--muted);transition:color 0.3s;display:inline-flex;align-items:center;gap:6px;font-size:13px;text-decoration:none" onmouseover="this.style.color='var(--cyan)'" onmouseout="this.style.color='var(--muted)'">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
+          </a>
+          <a href="https://linkedin.com/in/keshav-aggarwal07" target="_blank" class="social-icon" style="color:var(--muted);transition:color 0.3s;display:inline-flex;align-items:center;gap:6px;font-size:13px;text-decoration:none" onmouseover="this.style.color='var(--cyan)'" onmouseout="this.style.color='var(--muted)'">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://github.com" target="_blank" class="social-icon" style="color:var(--muted);transition:color 0.3s;display:inline-flex;align-items:center;gap:6px;font-size:13px;text-decoration:none" onmouseover="this.style.color='var(--cyan)'" onmouseout="this.style.color='var(--muted)'">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="hero-code animate-in hidden lg:block" style="animation-delay:0.3s">
+        <div class="code-block" style="animation:float 6s ease-in-out infinite">
+          <div class="code-window">
+            <div class="code-dot" style="background:#ff5f57"></div>
+            <div class="code-dot" style="background:#febc2e"></div>
+            <div class="code-dot" style="background:#28c840"></div>
+            <span style="margin-left:auto;font-size:11px;color:var(--muted)">keshav.ts</span>
+          </div>
+<pre style="overflow:hidden"><code><span class="kw">const</span> <span class="var">developer</span> <span class="op">=</span> {
+  <span class="str">name</span><span class="op">:</span> <span class="str">"Keshav Aggarwal"</span>,
+  <span class="str">college</span><span class="op">:</span> <span class="str">"BVCOE, GGSIPU"</span>,
+  <span class="str">year</span><span class="op">:</span> <span class="str">"B.Tech CSE 2024–28"</span>,
+  <span class="str">skills</span><span class="op">:</span> [
+    <span class="str">"React"</span>, <span class="str">"JavaScript"</span>,
+    <span class="str">"Tailwind"</span>, <span class="str">"C++"</span>, <span class="str">"DSA"</span>
+  ],
+  <span class="str">learning</span><span class="op">:</span> [<span class="str">"Node"</span>, <span class="str">"MongoDB"</span>, <span class="str">"ML"</span>],
+  <span class="str">goal</span><span class="op">:</span> <span class="str">"SWE Intern @ top company"</span>,
+  <span class="fn">solve</span><span class="op">:</span> (problem) <span class="op">=&gt;</span> {
+    <span class="cm">// 200+ LC problems solved 🚀</span>
+    <span class="kw">return</span> <span class="fn">optimal</span>(problem);
+  }
+};</code></pre>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px">
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center">
+            <div class="counter-num grad-cv" id="c1">0+</div>
+            <div style="font-size:12px;color:var(--muted);margin-top:4px">DSA Problems</div>
+          </div>
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center">
+            <div class="counter-num grad-vp" id="c2">0+</div>
+            <div style="font-size:12px;color:var(--muted);margin-top:4px">Projects Built</div>
+          </div>
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center">
+            <div class="counter-num grad-cv" id="c3">0+</div>
+            <div style="font-size:12px;color:var(--muted);margin-top:4px">Skills Mastered</div>
+          </div>
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center">
+            <div class="counter-num grad-vp" id="c4">0</div>
+            <div style="font-size:12px;color:var(--muted);margin-top:4px">Years Experience</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- SCROLL INDICATOR -->
+  <div style="position:absolute;bottom:30px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;animation:float 2s ease-in-out infinite">
+    <span style="font-size:12px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;font-family:'JetBrains Mono',monospace">scroll</span>
+    <div style="width:1px;height:40px;background:linear-gradient(180deg,var(--cyan),transparent)"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" style="background:var(--bg2);position:relative;overflow:hidden">
+  <div class="dot-grid" style="opacity:0.3"></div>
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div class="animate-in-left">
+        <p class="section-label">About Me</p>
+        <div class="section-divider"></div>
+        <h2 class="section-title">Crafting <span class="grad">Digital Experiences</span> with Precision</h2>
+        <p style="color:var(--muted);line-height:1.8;margin-bottom:20px">
+          I'm a passionate Computer Science student at Bharati Vidyapeeth College of Engineering (GGSIPU), driven by a love for building things that live on the internet. From pixel-perfect UIs to full-stack applications, I bring ideas to life with clean, efficient code.
+        </p>
+        <p style="color:var(--muted);line-height:1.8;margin-bottom:28px">
+          My journey spans <span style="color:var(--cyan)">frontend mastery</span> with React and Tailwind, deep <span style="color:var(--violet)">DSA problem-solving</span> in C++ and Java, and growing full-stack expertise. I'm also actively exploring Machine Learning, with the goal of becoming an ML Engineer who bridges the gap between intelligent algorithms and beautiful interfaces.
+        </p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px" class="about-grid">
+          <div class="about-stat">
+            <div style="font-size:24px;margin-bottom:6px">🎓</div>
+            <div style="font-weight:600;font-size:14px;margin-bottom:4px">Education</div>
+            <div style="font-size:12px;color:var(--muted)">B.Tech CSE, BVCOE<br>GGSIPU · 2024–2028</div>
+          </div>
+          <div class="about-stat">
+            <div style="font-size:24px;margin-bottom:6px">💡</div>
+            <div style="font-weight:600;font-size:14px;margin-bottom:4px">Focus Area</div>
+            <div style="font-size:12px;color:var(--muted)">Frontend & Full-Stack<br>Development</div>
+          </div>
+          <div class="about-stat">
+            <div style="font-size:24px;margin-bottom:6px">🧠</div>
+            <div style="font-weight:600;font-size:14px;margin-bottom:4px">DSA</div>
+            <div style="font-size:12px;color:var(--muted)">200+ problems solved<br>C++ & Java</div>
+          </div>
+          <div class="about-stat">
+            <div style="font-size:24px;margin-bottom:6px">🚀</div>
+            <div style="font-weight:600;font-size:14px;margin-bottom:4px">Future Goal</div>
+            <div style="font-size:12px;color:var(--muted)">ML Engineer<br>at top tech company</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="#contact" class="btn-primary"><span>Let's Connect</span></a>
+          <button class="btn-outline" onclick="downloadResume()">Download CV</button>
+        </div>
+      </div>
+      <div class="animate-in" style="display:flex;flex-direction:column;align-items:center;gap:24px">
+        <div style="position:relative;width:200px;height:200px;margin:0 auto">
+          <div style="width:200px;height:200px;border-radius:50%;position:relative">
+            <div style="position:absolute;inset:-3px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--violet),var(--pink));animation:spin-slow 8s linear infinite"></div>
+            <div style="position:relative;z-index:1;width:calc(100% - 6px);height:calc(100% - 6px);top:3px;left:3px;border-radius:50%;background:linear-gradient(135deg,#0d1f3c,#1a1040);display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-size:56px;font-weight:800">
+              KA
+            </div>
+          </div>
+          <div style="position:absolute;bottom:-10px;right:-10px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px 14px;font-size:13px;font-weight:600;color:var(--cyan)">
+            CSE '28
+          </div>
+        </div>
+        <!-- Traits -->
+        <div style="width:100%;max-width:380px">
+          <div style="margin-bottom:16px">
+            <div style="display:flex;justify-content:space-between;margin-bottom:6px;font-size:13px">
+              <span style="color:var(--text);font-weight:500">Frontend Development</span><span style="color:var(--cyan);font-family:'JetBrains Mono',monospace">90%</span>
+            </div>
+            <div class="skill-bar-wrap"><div class="skill-bar" data-width="90"></div></div>
+          </div>
+          <div style="margin-bottom:16px">
+            <div style="display:flex;justify-content:space-between;margin-bottom:6px;font-size:13px">
+              <span style="color:var(--text);font-weight:500">DSA & Problem Solving</span><span style="color:var(--violet);font-family:'JetBrains Mono',monospace">80%</span>
+            </div>
+            <div class="skill-bar-wrap"><div class="skill-bar" data-width="80" style="background:linear-gradient(90deg,var(--violet),var(--pink))"></div></div>
+          </div>
+          <div style="margin-bottom:16px">
+            <div style="display:flex;justify-content:space-between;margin-bottom:6px;font-size:13px">
+              <span style="color:var(--text);font-weight:500">Full-Stack Development</span><span style="color:var(--cyan);font-family:'JetBrains Mono',monospace">65%</span>
+            </div>
+            <div class="skill-bar-wrap"><div class="skill-bar" data-width="65"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:6px;font-size:13px">
+              <span style="color:var(--text);font-weight:500">Machine Learning</span><span style="color:var(--violet);font-family:'JetBrains Mono',monospace">35%</span>
+            </div>
+            <div class="skill-bar-wrap"><div class="skill-bar" data-width="35" style="background:linear-gradient(90deg,var(--violet),var(--pink))"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" style="position:relative;overflow:hidden">
+  <div class="orb" style="width:600px;height:600px;background:radial-gradient(circle,rgba(139,92,246,0.08),transparent 70%);top:-100px;right:-200px;position:absolute;border-radius:50%;pointer-events:none;filter:blur(80px)"></div>
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="text-center mb-16 animate-in">
+      <p class="section-label">Technical Arsenal</p>
+      <div class="section-divider" style="margin:12px auto 20px"></div>
+      <h2 class="section-title">Skills &amp; <span class="grad">Technologies</span></h2>
+      <p class="section-sub" style="margin:0 auto">A curated stack of tools and technologies I use to build exceptional digital products.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+      <!-- Frontend -->
+      <div class="skill-category animate-scale" style="transition-delay:0.1s">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px">
+          <div style="width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,rgba(6,182,212,0.2),rgba(6,182,212,0.05));border:1px solid rgba(6,182,212,0.3);display:flex;align-items:center;justify-content:center;font-size:16px">🎨</div>
+          <div>
+            <div style="font-weight:700;font-family:'Sora',sans-serif">Frontend</div>
+            <div style="font-size:11px;color:var(--muted)">Core Expertise</div>
+          </div>
+          <div style="margin-left:auto;width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan)"></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div class="skill-tag" style="justify-content:space-between">
+            <div style="display:flex;align-items:center;gap:8px">
+              <span style="font-size:16px">🌐</span><span>HTML5</span>
+            </div>
+            <span style="font-size:11px;color:var(--cyan);font-family:'JetBrains Mono',monospace">Expert</span>
+          </div>
+          <div class="skill-tag" style="justify-content:space-between">
+            <div style="display:flex;align-items:center;gap:8px">
+              <span style="font-size:16px">🎨</span><span>CSS3</span>
+            </div>
+            <span style="font-size:11px;color:var(--cyan);font-family:'JetBrains Mono',monospace">Expert</span>
+          </div>
+          <div class="skill-tag" style="justify-content:space-between">
+            <div style="display:flex;align-items:center;gap:8px">
+              <span style="font-size:16px">⚡</span><span>JavaScript</span>
+            </div>
+            <span style="font-size:11px;color:var(--cyan);font-family:'JetBrains Mono',monospace">Advanced</span>
+          </div>
+          <div class="skill-tag" style="justify-content:space-between">
+            <div style="display:flex;align-items:center;gap:8px">
+              <span style="font-size:16px">⚛️</span><span>React.js</span>
+            </div>
+            <span style="font-size:11px;color:var(--cyan);font-family:'JetBrains Mono',monospace">Advanced</span>
+          </div>
+          <div class="skill-tag" style="justify-content:space-between">
+            <div style="display:flex;align-items:center;gap:8px">
+              <span style="font-size:16px">💨</span><span>Tailwind CSS</span>
+            </div>
+            <span style="font-size:11px;color:var(--cyan);font-family:'JetBrains Mono',monospace">Advanced</span>
+          </div>
+        </div>
+      </div>
+      <!-- Programming -->
+      <div class="skill-category animate-scale" style="transition-delay:0.2s;border-color:rgba(139,92,246,0.2)">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px">
+          <div style="width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,rgba(139,92,246,0.2),rgba(139,92,246,0.05));border:1px solid rgba(139,92,246,0.3);display:flex;align-items:center;justify-content:center;font-size:16px">💻</div>
+          <div>
+            <div style="font-weight:700;font-family:'Sora',sans-serif">Programming</div>
+            <div style="font-size:11px;color:var(--muted)">Core Languages</div>
+          </div>
+          <div style="margin-left:auto;width:8px;height:8px;border-radius:50%;background:var(--violet);box-shadow:0 0 8px var(--violet)"></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div class="skill-tag" style="justify-content:space-between;border-color:rgba(139,92,246,0.2)">
+            <div style="display:flex;align-items:center;gap:8px">
+              <span style="font-size:16px">⚙️</span><span>C++</span>
+            </div>
+            <span style="font-size:11px;color:var(--violet);font-family:'JetBrains Mono',monospace">Strong</span>
+          </div>
+          <div class="skill-tag" style="justify-content:space-between;border-color:rgba(139,92,246,0.2)">
+            <div style="display:flex;align-items:center;gap:8px">
+              <span style="font-size:16px">☕</span><span>Java</span>
+            </div>
+            <span style="font-size:11px;color:var(--violet);font-family:'JetBrains Mono',monospace">Intermediate</span>
+          </div>
+          <div class="skill-tag" style="justify-content:space-between;border-color:rgba(139,92,246,0.2)">
+            <div style="display:flex;align-items:center;gap:8px">
+              <span style="font-size:16px">🧩</span><span>DSA</span>
+            </div>
+            <span style="font-size:11px;color:var(--violet);font-family:'JetBrains Mono',monospace">200+ Solved</span>
+          </div>
+          <div class="skill-tag" style="justify-content:space-between;border-color:rgba(139,92,246,0.2)">
+            <div style="display:flex;align-items:center;gap:8px">
+              <span style="font-size:16px">🐍</span><span>Python</span>
+            </div>
+            <span style="font-size:11px;color:var(--violet);font-family:'JetBrains Mono',monospace">Learning</span>
+          </div>
+        </div>
+      </div>
+      <!-- Tools -->
+      <div class="skill-category animate-scale" style="transition-delay:0.3s;border-color:rgba(240,171,252,0.2)">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px">
+          <div style="width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,rgba(240,171,252,0.15),rgba(240,171,252,0.03));border:1px solid rgba(240,171,252,0.3);display:flex;align-items:center;justify-content:center;font-size:16px">🛠️</div>
+          <div>
+            <div style="font-weight:700;font-family:'Sora',sans-serif">Tools & Platforms</div>
+            <div style="font-size:11px;color:var(--muted)">Dev Ecosystem</div>
+          </div>
+          <div style="margin-left:auto;width:8px;height:8px;border-radius:50%;background:var(--pink);box-shadow:0 0 8px var(--pink)"></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div class="skill-tag" style="justify-content:space-between;border-color:rgba(240,171,252,0.2)">
+            <div style="display:flex;align-items:center;gap:8px"><span style="font-size:16px">🌿</span><span>Git</span></div>
+            <span style="font-size:11px;color:var(--pink);font-family:'JetBrains Mono',monospace">Proficient</span>
+          </div>
+          <div class="skill-tag" style="justify-content:space-between;border-color:rgba(240,171,252,0.2)">
+            <div style="display:flex;align-items:center;gap:8px"><span style="font-size:16px">🐙</span><span>GitHub</span></div>
+            <span style="font-size:11px;color:var(--pink);font-family:'JetBrains Mono',monospace">Daily Use</span>
+          </div>
+          <div class="skill-tag" style="justify-content:space-between;border-color:rgba(240,171,252,0.2)">
+            <div style="display:flex;align-items:center;gap:8px"><span style="font-size:16px">🔥</span><span>Firebase</span></div>
+            <span style="font-size:11px;color:var(--pink);font-family:'JetBrains Mono',monospace">Comfortable</span>
+          </div>
+          <div class="skill-tag" style="justify-content:space-between;border-color:rgba(240,171,252,0.2)">
+            <div style="display:flex;align-items:center;gap:8px"><span style="font-size:16px">🔗</span><span>REST APIs</span></div>
+            <span style="font-size:11px;color:var(--pink);font-family:'JetBrains Mono',monospace">Proficient</span>
+          </div>
+          <div class="skill-tag" style="justify-content:space-between;border-color:rgba(240,171,252,0.2)">
+            <div style="display:flex;align-items:center;gap:8px"><span style="font-size:16px">🚀</span><span>Vercel / Netlify</span></div>
+            <span style="font-size:11px;color:var(--pink);font-family:'JetBrains Mono',monospace">Comfortable</span>
+          </div>
+        </div>
+      </div>
+      <!-- Learning -->
+      <div class="skill-category animate-scale" style="transition-delay:0.4s;border-color:rgba(34,211,238,0.15)">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px">
+          <div style="width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,rgba(34,211,238,0.15),rgba(34,211,238,0.03));border:1px solid rgba(34,211,238,0.3);display:flex;align-items:center;justify-content:center;font-size:16px">📚</div>
+          <div>
+            <div style="font-weight:700;font-family:'Sora',sans-serif">Currently Learning</div>
+            <div style="font-size:11px;color:var(--muted)">Expanding Skills</div>
+          </div>
+          <div style="margin-left:auto;width:8px;height:8px;border-radius:50%;background:#22d3ee;box-shadow:0 0 8px #22d3ee;animation:pulse 1.5s infinite"></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div class="skill-tag" style="justify-content:space-between">
+            <div style="display:flex;align-items:center;gap:8px"><span style="font-size:16px">🟢</span><span>Node.js</span></div>
+            <span style="font-size:11px;color:#22d3ee;font-family:'JetBrains Mono',monospace">In Progress</span>
+          </div>
+          <div class="skill-tag" style="justify-content:space-between">
+            <div style="display:flex;align-items:center;gap:8px"><span style="font-size:16px">🚂</span><span>Express.js</span></div>
+            <span style="font-size:11px;color:#22d3ee;font-family:'JetBrains Mono',monospace">In Progress</span>
+          </div>
+          <div class="skill-tag" style="justify-content:space-between">
+            <div style="display:flex;align-items:center;gap:8px"><span style="font-size:16px">🍃</span><span>MongoDB</span></div>
+            <span style="font-size:11px;color:#22d3ee;font-family:'JetBrains Mono',monospace">In Progress</span>
+          </div>
+          <div class="skill-tag" style="justify-content:space-between">
+            <div style="display:flex;align-items:center;gap:8px"><span style="font-size:16px">🤖</span><span>Machine Learning</span></div>
+            <span style="font-size:11px;color:#22d3ee;font-family:'JetBrains Mono',monospace">Exploring</span>
+          </div>
+          <div class="skill-tag" style="justify-content:space-between">
+            <div style="display:flex;align-items:center;gap:8px"><span style="font-size:16px">🔷</span><span>TypeScript</span></div>
+            <span style="font-size:11px;color:#22d3ee;font-family:'JetBrains Mono',monospace">Exploring</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" style="background:var(--bg2);position:relative;overflow:hidden">
+  <div class="dot-grid" style="opacity:0.2"></div>
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="text-center mb-16 animate-in">
+      <p class="section-label">Featured Work</p>
+      <div class="section-divider" style="margin:12px auto 20px"></div>
+      <h2 class="section-title">Projects That <span class="grad">Define Me</span></h2>
+      <p class="section-sub" style="margin:0 auto">Real-world applications built with modern stacks. Each project reflects my growth as a developer.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <!-- Project 1: Amazon E-Commerce -->
+      <div class="project-card animate-scale glow-border" style="transition-delay:0.1s">
+        <div style="height:5px;background:linear-gradient(90deg,var(--cyan),var(--violet))"></div>
+        <div style="padding:28px">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px">
+            <div>
+              <div style="font-size:11px;color:var(--cyan);font-family:'JetBrains Mono',monospace;letter-spacing:2px;margin-bottom:8px">E-COMMERCE</div>
+              <h3 style="font-family:'Sora',sans-serif;font-size:22px;font-weight:700;margin-bottom:6px">Amazon-Inspired<br>E-Commerce Platform</h3>
+            </div>
+            <div style="font-size:36px;margin-left:12px;opacity:0.8">🛒</div>
+          </div>
+          <p style="color:var(--muted);font-size:14px;line-height:1.7;margin-bottom:20px">
+            A fully functional Amazon-inspired shopping platform with product listings, cart management, user authentication, search functionality, and real-time updates.
+          </p>
+          <div style="margin-bottom:16px">
+            <div style="font-size:12px;color:var(--muted);margin-bottom:8px;font-weight:600">Key Features</div>
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:4px">
+              <li style="font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:center"><span style="color:var(--cyan)">▸</span>Responsive product grid with filters & search</li>
+              <li style="font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:center"><span style="color:var(--cyan)">▸</span>Cart management with local storage persistence</li>
+              <li style="font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:center"><span style="color:var(--cyan)">▸</span>Firebase authentication & real-time database</li>
+              <li style="font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:center"><span style="color:var(--cyan)">▸</span>Payment gateway integration</li>
+            </ul>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px">
+            <span class="tech-badge">React</span>
+            <span class="tech-badge">Tailwind CSS</span>
+            <span class="tech-badge">Firebase</span>
+            <span class="tech-badge">Context API</span>
+            <span class="tech-badge">REST APIs</span>
+          </div>
+          <div style="display:flex;gap:10px;align-items:center;border-top:1px solid var(--border);padding-top:16px">
+            <a href="https://github.com" target="_blank" class="project-link" title="GitHub">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            </a>
+            <a href="#" target="_blank" class="project-link" title="Live Demo">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+            <span style="margin-left:auto;font-size:12px;color:var(--muted);font-family:'JetBrains Mono',monospace">Full-Stack</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2: AI Resume Analyzer -->
+      <div class="project-card animate-scale glow-border" style="transition-delay:0.2s">
+        <div style="height:5px;background:linear-gradient(90deg,var(--violet),var(--pink))"></div>
+        <div style="padding:28px">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px">
+            <div>
+              <div style="font-size:11px;color:var(--violet);font-family:'JetBrains Mono',monospace;letter-spacing:2px;margin-bottom:8px">AI / ML</div>
+              <h3 style="font-family:'Sora',sans-serif;font-size:22px;font-weight:700;margin-bottom:6px">AI-Powered<br>Resume Analyzer</h3>
+            </div>
+            <div style="font-size:36px;margin-left:12px;opacity:0.8">🤖</div>
+          </div>
+          <p style="color:var(--muted);font-size:14px;line-height:1.7;margin-bottom:20px">
+            An intelligent resume analysis tool that leverages AI to score resumes, suggest improvements, match skills to job descriptions, and provide ATS compatibility feedback.
+          </p>
+          <div style="margin-bottom:16px">
+            <div style="font-size:12px;color:var(--muted);margin-bottom:8px;font-weight:600">Key Features</div>
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:4px">
+              <li style="font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:center"><span style="color:var(--violet)">▸</span>AI-powered skill extraction & scoring</li>
+              <li style="font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:center"><span style="color:var(--violet)">▸</span>ATS compatibility checker & optimizer</li>
+              <li style="font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:center"><span style="color:var(--violet)">▸</span>Job description keyword matching</li>
+              <li style="font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:center"><span style="color:var(--violet)">▸</span>Actionable improvement suggestions</li>
+            </ul>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px">
+            <span class="tech-badge" style="color:var(--violet);border-color:rgba(139,92,246,0.3);background:rgba(139,92,246,0.1)">React</span>
+            <span class="tech-badge" style="color:var(--violet);border-color:rgba(139,92,246,0.3);background:rgba(139,92,246,0.1)">Python</span>
+            <span class="tech-badge" style="color:var(--violet);border-color:rgba(139,92,246,0.3);background:rgba(139,92,246,0.1)">NLP / AI API</span>
+            <span class="tech-badge" style="color:var(--violet);border-color:rgba(139,92,246,0.3);background:rgba(139,92,246,0.1)">Firebase</span>
+          </div>
+          <div style="display:flex;gap:10px;align-items:center;border-top:1px solid var(--border);padding-top:16px">
+            <a href="https://github.com" target="_blank" class="project-link" title="GitHub">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            </a>
+            <a href="#" target="_blank" class="project-link" title="Live Demo">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+            <span style="margin-left:auto;font-size:12px;color:var(--muted);font-family:'JetBrains Mono',monospace">AI Project</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3: Crypto & Stock Tracker -->
+      <div class="project-card animate-scale glow-border" style="transition-delay:0.3s">
+        <div style="height:5px;background:linear-gradient(90deg,#f59e0b,#ef4444)"></div>
+        <div style="padding:28px">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px">
+            <div>
+              <div style="font-size:11px;color:#f59e0b;font-family:'JetBrains Mono',monospace;letter-spacing:2px;margin-bottom:8px">DASHBOARD</div>
+              <h3 style="font-family:'Sora',sans-serif;font-size:22px;font-weight:700;margin-bottom:6px">Crypto &amp; Stock<br>Tracker Dashboard</h3>
+            </div>
+            <div style="font-size:36px;margin-left:12px;opacity:0.8">📈</div>
+          </div>
+          <p style="color:var(--muted);font-size:14px;line-height:1.7;margin-bottom:20px">
+            A real-time financial dashboard tracking cryptocurrency prices, stock markets, portfolio performance, with interactive charts and price alert notifications.
+          </p>
+          <div style="margin-bottom:16px">
+            <div style="font-size:12px;color:var(--muted);margin-bottom:8px;font-weight:600">Key Features</div>
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:4px">
+              <li style="font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:center"><span style="color:#f59e0b">▸</span>Real-time price tracking via CoinGecko & Alpha Vantage APIs</li>
+              <li style="font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:center"><span style="color:#f59e0b">▸</span>Interactive charts with historical data</li>
+              <li style="font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:center"><span style="color:#f59e0b">▸</span>Portfolio watchlist & custom price alerts</li>
+              <li style="font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:center"><span style="color:#f59e0b">▸</span>Responsive dark-mode design</li>
+            </ul>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px">
+            <span class="tech-badge" style="color:#f59e0b;border-color:rgba(245,158,11,0.3);background:rgba(245,158,11,0.1)">React</span>
+            <span class="tech-badge" style="color:#f59e0b;border-color:rgba(245,158,11,0.3);background:rgba(245,158,11,0.1)">Chart.js</span>
+            <span class="tech-badge" style="color:#f59e0b;border-color:rgba(245,158,11,0.3);background:rgba(245,158,11,0.1)">REST APIs</span>
+            <span class="tech-badge" style="color:#f59e0b;border-color:rgba(245,158,11,0.3);background:rgba(245,158,11,0.1)">Tailwind</span>
+          </div>
+          <div style="display:flex;gap:10px;align-items:center;border-top:1px solid var(--border);padding-top:16px">
+            <a href="https://github.com" target="_blank" class="project-link" title="GitHub">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            </a>
+            <a href="#" target="_blank" class="project-link" title="Live Demo">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+            <span style="margin-left:auto;font-size:12px;color:var(--muted);font-family:'JetBrains Mono',monospace">API Integration</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4: Smart Traffic -->
+      <div class="project-card animate-scale glow-border" style="transition-delay:0.4s">
+        <div style="height:5px;background:linear-gradient(90deg,#10b981,var(--cyan))"></div>
+        <div style="padding:28px">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px">
+            <div>
+              <div style="font-size:11px;color:#10b981;font-family:'JetBrains Mono',monospace;letter-spacing:2px;margin-bottom:8px">SMART CITY / AI</div>
+              <h3 style="font-family:'Sora',sans-serif;font-size:22px;font-weight:700;margin-bottom:6px">Smart Traffic Density<br>Management System</h3>
+            </div>
+            <div style="font-size:36px;margin-left:12px;opacity:0.8">🚦</div>
+          </div>
+          <p style="color:var(--muted);font-size:14px;line-height:1.7;margin-bottom:20px">
+            An intelligent traffic management system using computer vision and ML algorithms to analyze traffic density, optimize signal timings, and reduce congestion in real time.
+          </p>
+          <div style="margin-bottom:16px">
+            <div style="font-size:12px;color:var(--muted);margin-bottom:8px;font-weight:600">Key Features</div>
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:4px">
+              <li style="font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:center"><span style="color:#10b981">▸</span>Real-time vehicle density detection & counting</li>
+              <li style="font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:center"><span style="color:#10b981">▸</span>Adaptive signal timing optimization</li>
+              <li style="font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:center"><span style="color:#10b981">▸</span>Live dashboard with congestion heatmaps</li>
+              <li style="font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:center"><span style="color:#10b981">▸</span>Priority lane detection for emergency vehicles</li>
+            </ul>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px">
+            <span class="tech-badge" style="color:#10b981;border-color:rgba(16,185,129,0.3);background:rgba(16,185,129,0.1)">Python</span>
+            <span class="tech-badge" style="color:#10b981;border-color:rgba(16,185,129,0.3);background:rgba(16,185,129,0.1)">OpenCV</span>
+            <span class="tech-badge" style="color:#10b981;border-color:rgba(16,185,129,0.3);background:rgba(16,185,129,0.1)">React</span>
+            <span class="tech-badge" style="color:#10b981;border-color:rgba(16,185,129,0.3);background:rgba(16,185,129,0.1)">ML</span>
+          </div>
+          <div style="display:flex;gap:10px;align-items:center;border-top:1px solid var(--border);padding-top:16px">
+            <a href="https://github.com" target="_blank" class="project-link" title="GitHub">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            </a>
+            <a href="#" target="_blank" class="project-link" title="Live Demo">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+            <span style="margin-left:auto;font-size:12px;color:var(--muted);font-family:'JetBrains Mono',monospace">AI / Computer Vision</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-12 animate-in">
+      <a href="https://github.com" target="_blank" class="btn-outline">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        View All Projects on GitHub
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" style="position:relative;overflow:hidden">
+  <div style="position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 20% 50%,rgba(6,182,212,0.04),transparent 50%),radial-gradient(ellipse at 80% 50%,rgba(139,92,246,0.04),transparent 50%);pointer-events:none"></div>
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="text-center mb-16 animate-in">
+      <p class="section-label">Journey So Far</p>
+      <div class="section-divider" style="margin:12px auto 20px"></div>
+      <h2 class="section-title">Experience &amp; <span class="grad">Achievements</span></h2>
+      <p class="section-sub" style="margin:0 auto">Building leadership, community, and technical skills beyond the classroom.</p>
+    </div>
+    <div class="max-w-3xl mx-auto">
+      <!-- Timeline -->
+      <div class="timeline-item animate-in-left" style="transition-delay:0.1s">
+        <div class="timeline-dot">🎮</div>
+        <div class="timeline-card">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:12px">
+            <div>
+              <h3 style="font-family:'Sora',sans-serif;font-size:18px;font-weight:700;margin-bottom:4px">Discord Community Manager</h3>
+              <div style="color:var(--cyan);font-size:13px;font-weight:600">Tech Developer Community · Remote</div>
+            </div>
+            <div style="background:rgba(6,182,212,0.1);border:1px solid rgba(6,182,212,0.3);border-radius:999px;padding:4px 12px;font-size:12px;color:var(--cyan);font-family:'JetBrains Mono',monospace;white-space:nowrap">2023 – Present</div>
+          </div>
+          <p style="color:var(--muted);font-size:14px;line-height:1.7;margin-bottom:14px">
+            Managed and grew a developer community of 500+ members. Organized weekly coding challenges, tech discussions, and resource sharing sessions to foster a collaborative learning environment.
+          </p>
+          <div style="display:flex;flex-wrap:wrap;gap:6px">
+            <span style="display:inline-block;padding:3px 10px;border-radius:6px;font-size:12px;font-weight:600;background:rgba(6,182,212,0.1);color:var(--cyan);border:1px solid rgba(6,182,212,0.2)">Community Building</span>
+            <span style="display:inline-block;padding:3px 10px;border-radius:6px;font-size:12px;font-weight:600;background:rgba(6,182,212,0.1);color:var(--cyan);border:1px solid rgba(6,182,212,0.2)">Event Management</span>
+            <span style="display:inline-block;padding:3px 10px;border-radius:6px;font-size:12px;font-weight:600;background:rgba(6,182,212,0.1);color:var(--cyan);border:1px solid rgba(6,182,212,0.2)">Leadership</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item animate-in-left" style="transition-delay:0.2s">
+        <div class="timeline-dot">👥</div>
+        <div class="timeline-card">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:12px">
+            <div>
+              <h3 style="font-family:'Sora',sans-serif;font-size:18px;font-weight:700;margin-bottom:4px">Team Lead & Collaborator</h3>
+              <div style="color:var(--violet);font-size:13px;font-weight:600">Academic & Project Teams · BVCOE</div>
+            </div>
+            <div style="background:rgba(139,92,246,0.1);border:1px solid rgba(139,92,246,0.3);border-radius:999px;padding:4px 12px;font-size:12px;color:var(--violet);font-family:'JetBrains Mono',monospace;white-space:nowrap">2024 – Present</div>
+          </div>
+          <p style="color:var(--muted);font-size:14px;line-height:1.7;margin-bottom:14px">
+            Led cross-functional teams in building college projects. Coordinated task delegation, code reviews, and timely delivery. Developed strong collaborative skills working with diverse technical and non-technical teammates.
+          </p>
+          <div style="display:flex;flex-wrap:wrap;gap:6px">
+            <span style="display:inline-block;padding:3px 10px;border-radius:6px;font-size:12px;font-weight:600;background:rgba(139,92,246,0.1);color:var(--violet);border:1px solid rgba(139,92,246,0.2)">Team Leadership</span>
+            <span style="display:inline-block;padding:3px 10px;border-radius:6px;font-size:12px;font-weight:600;background:rgba(139,92,246,0.1);color:var(--violet);border:1px solid rgba(139,92,246,0.2)">Agile Workflow</span>
+            <span style="display:inline-block;padding:3px 10px;border-radius:6px;font-size:12px;font-weight:600;background:rgba(139,92,246,0.1);color:var(--violet);border:1px solid rgba(139,92,246,0.2)">Communication</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item animate-in-left" style="transition-delay:0.3s">
+        <div class="timeline-dot">🏆</div>
+        <div class="timeline-card">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:12px">
+            <div>
+              <h3 style="font-family:'Sora',sans-serif;font-size:18px;font-weight:700;margin-bottom:4px">Technical Events & Hackathons</h3>
+              <div style="color:#f59e0b;font-size:13px;font-weight:600">Competitive Programming & Events</div>
+            </div>
+            <div style="background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.3);border-radius:999px;padding:4px 12px;font-size:12px;color:#f59e0b;font-family:'JetBrains Mono',monospace;white-space:nowrap">2024 – Present</div>
+          </div>
+          <p style="color:var(--muted);font-size:14px;line-height:1.7;margin-bottom:14px">
+            Actively participated in hackathons, coding competitions, and tech fests. Consistently applied problem-solving skills under pressure and collaborated with teams to build innovative solutions within tight deadlines.
+          </p>
+          <div style="display:flex;flex-wrap:wrap;gap:6px">
+            <span style="display:inline-block;padding:3px 10px;border-radius:6px;font-size:12px;font-weight:600;background:rgba(245,158,11,0.1);color:#f59e0b;border:1px solid rgba(245,158,11,0.2)">Hackathons</span>
+            <span style="display:inline-block;padding:3px 10px;border-radius:6px;font-size:12px;font-weight:600;background:rgba(245,158,11,0.1);color:#f59e0b;border:1px solid rgba(245,158,11,0.2)">CP Contests</span>
+            <span style="display:inline-block;padding:3px 10px;border-radius:6px;font-size:12px;font-weight:600;background:rgba(245,158,11,0.1);color:#f59e0b;border:1px solid rgba(245,158,11,0.2)">Problem Solving</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item animate-in-left" style="transition-delay:0.4s;padding-bottom:0">
+        <div class="timeline-dot">🎓</div>
+        <div class="timeline-card">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:12px">
+            <div>
+              <h3 style="font-family:'Sora',sans-serif;font-size:18px;font-weight:700;margin-bottom:4px">B.Tech Computer Science Engineering</h3>
+              <div style="color:#10b981;font-size:13px;font-weight:600">Bharati Vidyapeeth College of Engineering, GGSIPU</div>
+            </div>
+            <div style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.3);border-radius:999px;padding:4px 12px;font-size:12px;color:#10b981;font-family:'JetBrains Mono',monospace;white-space:nowrap">2024 – 2028</div>
+          </div>
+          <p style="color:var(--muted);font-size:14px;line-height:1.7;margin-bottom:14px">
+            Currently pursuing B.Tech in Computer Science. Focusing on core CS fundamentals, data structures, algorithms, software engineering principles, and practical project development alongside curriculum studies.
+          </p>
+          <div style="display:flex;flex-wrap:wrap;gap:6px">
+            <span style="display:inline-block;padding:3px 10px;border-radius:6px;font-size:12px;font-weight:600;background:rgba(16,185,129,0.1);color:#10b981;border:1px solid rgba(16,185,129,0.2)">Computer Science</span>
+            <span style="display:inline-block;padding:3px 10px;border-radius:6px;font-size:12px;font-weight:600;background:rgba(16,185,129,0.1);color:#10b981;border:1px solid rgba(16,185,129,0.2)">GGSIPU</span>
+            <span style="display:inline-block;padding:3px 10px;border-radius:6px;font-size:12px;font-weight:600;background:rgba(16,185,129,0.1);color:#10b981;border:1px solid rgba(16,185,129,0.2)">Batch 2028</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="background:var(--bg2);position:relative;overflow:hidden">
+  <div class="dot-grid"></div>
+  <div style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:800px;height:400px;background:radial-gradient(ellipse,rgba(6,182,212,0.06),transparent 70%);pointer-events:none"></div>
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="text-center mb-16 animate-in">
+      <p class="section-label">Get In Touch</p>
+      <div class="section-divider" style="margin:12px auto 20px"></div>
+      <h2 class="section-title">Let's <span class="grad">Work Together</span></h2>
+      <p class="section-sub" style="margin:0 auto">I'm actively looking for internship opportunities. Whether you have a project, an offer, or just want to say hello — my inbox is always open.</p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <!-- LEFT: Contact Info -->
+      <div class="animate-in-left">
+        <h3 style="font-family:'Sora',sans-serif;font-size:24px;font-weight:700;margin-bottom:8px">Ready to build something <span class="grad-cv">amazing?</span></h3>
+        <p style="color:var(--muted);margin-bottom:32px;line-height:1.7;font-size:15px">I bring strong frontend skills, growing full-stack capabilities, deep DSA fundamentals, and an eagerness to learn and contribute from day one.</p>
+        
+        <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:32px">
+          <a href="mailto:Keshavaggarwal1232@gmail.com" class="contact-card">
+            <div style="width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,rgba(6,182,212,0.2),rgba(6,182,212,0.05));border:1px solid rgba(6,182,212,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
+            </div>
+            <div>
+              <div style="font-size:12px;color:var(--muted);margin-bottom:2px">Email</div>
+              <div style="font-size:14px;font-weight:600;color:var(--cyan)">Keshavaggarwal1232@gmail.com</div>
+            </div>
+          </a>
+          <a href="https://linkedin.com/in/keshav-aggarwal07" target="_blank" class="contact-card">
+            <div style="width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,rgba(139,92,246,0.2),rgba(139,92,246,0.05));border:1px solid rgba(139,92,246,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--violet)"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </div>
+            <div>
+              <div style="font-size:12px;color:var(--muted);margin-bottom:2px">LinkedIn</div>
+              <div style="font-size:14px;font-weight:600;color:var(--violet)">linkedin.com/in/keshav-aggarwal07</div>
+            </div>
+          </a>
+          <a href="https://github.com" target="_blank" class="contact-card">
+            <div style="width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,rgba(240,171,252,0.15),rgba(240,171,252,0.03));border:1px solid rgba(240,171,252,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--pink)"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            </div>
+            <div>
+              <div style="font-size:12px;color:var(--muted);margin-bottom:2px">GitHub</div>
+              <div style="font-size:14px;font-weight:600;color:var(--pink)">github.com/keshav-aggarwal</div>
+            </div>
+          </a>
+        </div>
+        
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+            <div style="width:8px;height:8px;border-radius:50%;background:#10b981;box-shadow:0 0 8px #10b981;animation:pulse 2s infinite"></div>
+            <span style="font-size:14px;font-weight:600;color:#10b981">Open to Opportunities</span>
+          </div>
+          <p style="font-size:13px;color:var(--muted);line-height:1.6">Available for: SWE Internships · Frontend roles · Full-stack projects · Freelance work · Open source collaboration</p>
+        </div>
+      </div>
+      
+      <!-- RIGHT: Form -->
+      <div class="animate-in" style="transition-delay:0.2s">
+        <div style="background:var(--card);border:1px solid var(--border);border-radius:20px;padding:36px;position:relative;overflow:hidden">
+          <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--cyan),var(--violet),var(--pink))"></div>
+          <h3 style="font-family:'Sora',sans-serif;font-size:20px;font-weight:700;margin-bottom:24px">Send a Message</h3>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+            <div>
+              <label style="display:block;font-size:13px;font-weight:600;color:var(--muted);margin-bottom:8px">First Name</label>
+              <input type="text" class="contact-input" placeholder="Rahul"/>
+            </div>
+            <div>
+              <label style="display:block;font-size:13px;font-weight:600;color:var(--muted);margin-bottom:8px">Last Name</label>
+              <input type="text" class="contact-input" placeholder="Sharma"/>
+            </div>
+          </div>
+          <div style="margin-bottom:16px">
+            <label style="display:block;font-size:13px;font-weight:600;color:var(--muted);margin-bottom:8px">Email Address</label>
+            <input type="email" class="contact-input" placeholder="recruiter@company.com"/>
+          </div>
+          <div style="margin-bottom:16px">
+            <label style="display:block;font-size:13px;font-weight:600;color:var(--muted);margin-bottom:8px">Subject</label>
+            <input type="text" class="contact-input" placeholder="Internship Opportunity at XYZ Company"/>
+          </div>
+          <div style="margin-bottom:24px">
+            <label style="display:block;font-size:13px;font-weight:600;color:var(--muted);margin-bottom:8px">Message</label>
+            <textarea class="contact-input" rows="5" placeholder="Hi Keshav, I came across your portfolio and would love to discuss an internship opportunity..." style="resize:vertical;min-height:120px"></textarea>
+          </div>
+          <button class="btn-primary w-full" onclick="handleSubmit()" style="width:100%;justify-content:center;padding:14px">
+            <span id="btn-text">Send Message</span>
+            <svg id="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13M22 2L15 22 11 13 2 9l20-7z"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <a href="#home" style="font-family:'Sora',sans-serif;font-weight:800;font-size:22px;text-decoration:none;display:inline-block">
+          <span class="grad">KA</span><span style="color:var(--muted)">.dev</span>
+        </a>
+        <p style="color:var(--muted);font-size:13px;margin-top:6px">Aspiring Software Developer · BVCOE, GGSIPU · 2024–2028</p>
+      </div>
+      <div style="display:flex;gap:8px">
+        <a href="#home" style="font-size:13px;color:var(--muted);text-decoration:none;transition:color 0.3s;padding:4px 8px" onmouseover="this.style.color='var(--cyan)'" onmouseout="this.style.color='var(--muted)'">Home</a>
+        <a href="#about" style="font-size:13px;color:var(--muted);text-decoration:none;transition:color 0.3s;padding:4px 8px" onmouseover="this.style.color='var(--cyan)'" onmouseout="this.style.color='var(--muted)'">About</a>
+        <a href="#skills" style="font-size:13px;color:var(--muted);text-decoration:none;transition:color 0.3s;padding:4px 8px" onmouseover="this.style.color='var(--cyan)'" onmouseout="this.style.color='var(--muted)'">Skills</a>
+        <a href="#projects" style="font-size:13px;color:var(--muted);text-decoration:none;transition:color 0.3s;padding:4px 8px" onmouseover="this.style.color='var(--cyan)'" onmouseout="this.style.color='var(--muted)'">Projects</a>
+        <a href="#contact" style="font-size:13px;color:var(--muted);text-decoration:none;transition:color 0.3s;padding:4px 8px" onmouseover="this.style.color='var(--cyan)'" onmouseout="this.style.color='var(--muted)'">Contact</a>
+      </div>
+      <div style="display:flex;gap:12px">
+        <a href="mailto:Keshavaggarwal1232@gmail.com" style="color:var(--muted);transition:color 0.3s" onmouseover="this.style.color='var(--cyan)'" onmouseout="this.style.color='var(--muted)'">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/keshav-aggarwal07" target="_blank" style="color:var(--muted);transition:color 0.3s" onmouseover="this.style.color='#0077B5'" onmouseout="this.style.color='var(--muted)'">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://github.com" target="_blank" style="color:var(--muted);transition:color 0.3s" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--muted)'">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div style="border-top:1px solid var(--border);margin-top:28px;padding-top:24px;text-align:center;font-size:13px;color:var(--muted)">
+      <span>Built with ❤️ by </span><span class="grad" style="font-weight:700">Keshav Aggarwal</span><span> · </span><span id="year">2025</span><span> · All rights reserved</span>
+    </div>
+  </div>
+</footer>
+
+<!-- SCROLL TO TOP -->
+<button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<!-- TOAST -->
+<div id="toast">✅ Message sent! I'll get back to you soon.</div>
+
+<script>
+// PROGRESS BAR
+const progressBar = document.getElementById('progress-bar');
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+  progressBar.style.width = pct + '%';
+});
+
+// NAV SCROLL
+const nav = document.getElementById('navbar');
+const links = document.querySelectorAll('.nav-link');
+window.addEventListener('scroll', () => {
+  if(window.scrollY > 50) nav.classList.add('scrolled');
+  else nav.classList.remove('scrolled');
+  
+  // Active link
+  const sections = ['home','about','skills','projects','experience','contact'];
+  let current = '';
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if(el && window.scrollY >= el.offsetTop - 120) current = id;
+  });
+  links.forEach(l => {
+    l.classList.toggle('active', l.getAttribute('href') === '#'+current);
+  });
+  
+  // Scroll top btn
+  document.getElementById('scroll-top').classList.toggle('show', window.scrollY > 500);
+});
+
+// MOBILE MENU
+const toggle = document.getElementById('menu-toggle');
+const mobileMenu = document.getElementById('mobileMenu');
+let menuOpen = false;
+toggle.addEventListener('click', () => {
+  menuOpen = !menuOpen;
+  if(menuOpen){
+    mobileMenu.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  } else {
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+});
+function closeMobile(){
+  mobileMenu.classList.remove('open');
+  document.body.style.overflow = '';
+  menuOpen = false;
+}
+
+// TYPING ANIMATION
+const phrases = [
+  'Frontend Developer',
+  'React Specialist',
+  'DSA Enthusiast',
+  'Full-Stack Learner',
+  'Future ML Engineer',
+  'UI/UX Craftsman'
+];
+let pIdx = 0, cIdx = 0, deleting = false;
+const typedEl = document.getElementById('typed-text');
+function type(){
+  const phrase = phrases[pIdx];
+  if(!deleting){
+    typedEl.textContent = phrase.slice(0, cIdx+1);
+    cIdx++;
+    if(cIdx === phrase.length){
+      deleting = true;
+      setTimeout(type, 2000);
+      return;
+    }
+  } else {
+    typedEl.textContent = phrase.slice(0, cIdx-1);
+    cIdx--;
+    if(cIdx === 0){
+      deleting = false;
+      pIdx = (pIdx+1) % phrases.length;
+    }
+  }
+  setTimeout(type, deleting ? 60 : 100);
+}
+type();
+
+// PARTICLE CANVAS
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+let particles = [];
+function resizeCanvas(){
+  canvas.width = window.innerWidth;
+  canvas.height = document.getElementById('home').offsetHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+class Particle {
+  constructor(){
+    this.reset();
+  }
+  reset(){
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    this.r = Math.random() * 1.5 + 0.5;
+    this.vx = (Math.random()-0.5) * 0.4;
+    this.vy = (Math.random()-0.5) * 0.4;
+    this.a = Math.random() * 0.4 + 0.1;
+    this.c = Math.random() > 0.5 ? '6,182,212' : '139,92,246';
+  }
+  update(){
+    this.x += this.vx;
+    this.y += this.vy;
+    if(this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) this.reset();
+  }
+  draw(){
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.r, 0, Math.PI*2);
+    ctx.fillStyle = `rgba(${this.c},${this.a})`;
+    ctx.fill();
+  }
+}
+
+for(let i=0; i<80; i++) particles.push(new Particle());
+
+function drawLines(){
+  for(let i=0; i<particles.length; i++){
+    for(let j=i+1; j<particles.length; j++){
+      const dx = particles[i].x - particles[j].x;
+      const dy = particles[i].y - particles[j].y;
+      const d = Math.sqrt(dx*dx+dy*dy);
+      if(d < 100){
+        ctx.beginPath();
+        ctx.moveTo(particles[i].x, particles[i].y);
+        ctx.lineTo(particles[j].x, particles[j].y);
+        ctx.strokeStyle = `rgba(6,182,212,${0.08*(1-d/100)})`;
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
+      }
+    }
+  }
+}
+
+function animate(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  particles.forEach(p => { p.update(); p.draw(); });
+  drawLines();
+  requestAnimationFrame(animate);
+}
+animate();
+
+// INTERSECTION OBSERVER - ANIMATE IN
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if(entry.isIntersecting){
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+        // Skill bars
+        entry.target.querySelectorAll('.skill-bar').forEach(bar => {
+          bar.style.width = bar.dataset.width + '%';
+        });
+      }, 50);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.animate-in, .animate-in-left, .animate-scale').forEach(el => observer.observe(el));
+document.querySelectorAll('.skill-bar').forEach(bar => observer.observe(bar.parentElement));
+
+// Also observe skill bars directly in about section
+const aboutObs = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.querySelectorAll('.skill-bar').forEach(bar => {
+        setTimeout(() => bar.style.width = bar.dataset.width + '%', 300);
+      });
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('#about').forEach(el => aboutObs.observe(el));
+
+// COUNTER ANIMATION
+function animateCounter(el, target, suffix='', duration=1500){
+  let start = 0;
+  const step = target / (duration / 16);
+  const timer = setInterval(() => {
+    start = Math.min(start + step, target);
+    el.textContent = Math.floor(start) + suffix;
+    if(start >= target) clearInterval(timer);
+  }, 16);
+}
+
+const counterObs = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      animateCounter(document.getElementById('c1'), 200, '+');
+      animateCounter(document.getElementById('c2'), 4, '+');
+      animateCounter(document.getElementById('c3'), 12, '+');
+      document.getElementById('c4').textContent = '1';
+      counterObs.disconnect();
+    }
+  });
+}, { threshold: 0.5 });
+const heroCode = document.querySelector('.hero-code');
+if(heroCode) counterObs.observe(heroCode);
+
+// CONTACT FORM
+function handleSubmit(){
+  const btn = document.querySelector('#contact .btn-primary');
+  const btnText = document.getElementById('btn-text');
+  const btnIcon = document.getElementById('btn-icon');
+  btnText.textContent = 'Sending...';
+  btn.style.opacity = '0.8';
+  setTimeout(() => {
+    btnText.textContent = '✓ Message Sent!';
+    btn.style.background = 'linear-gradient(135deg,#10b981,#059669)';
+    const toast = document.getElementById('toast');
+    toast.classList.add('show');
+    setTimeout(() => {
+      toast.classList.remove('show');
+      btnText.textContent = 'Send Message';
+      btn.style.opacity = '1';
+      btn.style.background = '';
+    }, 4000);
+  }, 1500);
+}
+
+// RESUME DOWNLOAD
+function downloadResume(){
+  const toast = document.getElementById('toast');
+  toast.textContent = '📄 Resume download will be available soon!';
+  toast.classList.add('show');
+  setTimeout(() => { toast.classList.remove('show'); toast.textContent = '✅ Message sent! I\'ll get back to you soon.'; }, 3000);
+}
+
+// YEAR
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
