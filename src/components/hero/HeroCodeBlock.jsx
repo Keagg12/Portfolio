@@ -25,13 +25,13 @@ export default function HeroCodeBlock() {
             <br />
             &nbsp;&nbsp;],
             <br />
-            &nbsp;&nbsp;<span className="str">learning</span><span className="op">:</span> [<span className="str">"Node"</span>, <span className="str">"MongoDB"</span>, <span className="str">"ML"</span>],
+            &nbsp;&nbsp;<span className="str">learning</span><span className="op">:</span> [<span className="str">"Node.js"</span>, <span className="str">"Express.js"</span>, <span className="str">"MongoDB"</span>, <span className="str">"TypeScript"</span>, <span className="str">"Backend"</span>],
             <br />
-            &nbsp;&nbsp;<span className="str">goal</span><span className="op">:</span> <span className="str">"SWE Intern @ top company"</span>,
+            &nbsp;&nbsp;<span className="str">goal</span><span className="op">:</span> <span className="str">"Frontend internship & full-stack growth"</span>,
             <br />
             &nbsp;&nbsp;<span className="str">solve</span><span className="op">:</span> (<span className="var">problem</span>) <span className="op">=&gt;</span> {'{'}
             <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;<span className="cm">// 200+ LC problems solved 🚀</span>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span className="cm">// 70+ DSA problems solved</span>
             <br />
             &nbsp;&nbsp;&nbsp;&nbsp;<span className="kw">return</span> <span className="fn">optimal</span>(<span className="var">problem</span>);
             <br />

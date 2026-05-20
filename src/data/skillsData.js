@@ -5,10 +5,10 @@ export const skillsData = [
     color: 'var(--cyan)',
     icon: '🎨',
     items: [
-      { icon: '🌐', label: 'HTML5', level: 'Expert' },
-      { icon: '🎨', label: 'CSS3', level: 'Expert' },
-      { icon: '⚡', label: 'JavaScript', level: 'Advanced' },
-      { icon: '⚛️', label: 'React.js', level: 'Advanced' },
+      { icon: '🌐', label: 'HTML5', level: 'Advanced' },
+      { icon: '🎨', label: 'CSS3', level: 'Advanced' },
+      { icon: '⚡', label: 'JavaScript', level: 'Intermediate' },
+      { icon: '⚛️', label: 'React.js', level: 'Intermediate' },
       { icon: '💨', label: 'Tailwind CSS', level: 'Advanced' },
     ],
   },
@@ -20,8 +20,8 @@ export const skillsData = [
     items: [
       { icon: '⚙️', label: 'C++', level: 'Strong' },
       { icon: '☕', label: 'Java', level: 'Intermediate' },
-      { icon: '🧩', label: 'DSA', level: '200+ Solved' },
-      { icon: '🐍', label: 'Python', level: 'Learning' },
+      { icon: '🧩', label: 'DSA', level: '70+ Problems Solved' },
+      { icon: '🐍', label: 'Python', level: 'Beginner' },
     ],
   },
   {
@@ -30,11 +30,11 @@ export const skillsData = [
     color: 'var(--pink)',
     icon: '🛠️',
     items: [
-      { icon: '🌿', label: 'Git', level: 'Proficient' },
-      { icon: '🐙', label: 'GitHub', level: 'Daily Use' },
-      { icon: '🔥', label: 'Firebase', level: 'Comfortable' },
-      { icon: '🔗', label: 'REST APIs', level: 'Proficient' },
+      { icon: '🌿', label: 'Git', level: 'Comfortable' },
+      { icon: '🐙', label: 'GitHub', level: 'Active Use' },
+      { icon: '🔗', label: 'REST APIs', level: 'Intermediate' },
       { icon: '🚀', label: 'Vercel / Netlify', level: 'Comfortable' },
+      { icon: '🧑‍💻', label: 'VS Code', level: 'Daily Use' },
     ],
   },
   {
@@ -46,8 +46,8 @@ export const skillsData = [
       { icon: '🟢', label: 'Node.js', level: 'In Progress' },
       { icon: '🚂', label: 'Express.js', level: 'In Progress' },
       { icon: '🍃', label: 'MongoDB', level: 'In Progress' },
-      { icon: '🤖', label: 'Machine Learning', level: 'Exploring' },
-      { icon: '🔷', label: 'TypeScript', level: 'Exploring' },
+      { icon: '🔷', label: 'TypeScript', level: 'In Progress' },
+      { icon: '⚙️', label: 'Backend Development', level: 'Learning' },
     ],
   },
 ]

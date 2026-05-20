@@ -9,10 +9,10 @@ export default function About(){
             <div className="section-divider"></div>
             <h2 className="section-title">Crafting <span className="grad">Digital Experiences</span> with Precision</h2>
             <p style={{ color: 'var(--muted)', lineHeight: 1.8, marginBottom: 20 }}>
-              I'm a passionate Computer Science student at Bharati Vidyapeeth College of Engineering (GGSIPU), driven by a love for building things that live on the internet. From pixel-perfect UIs to full-stack applications, I bring ideas to life with clean, efficient code.
+              I am a frontend-focused developer building responsive web experiences with React and Tailwind CSS. I enjoy turning user needs into clean interfaces and improving usability through thoughtful UI design.
             </p>
             <p style={{ color: 'var(--muted)', lineHeight: 1.8, marginBottom: 28 }}>
-              My journey spans <span style={{ color: 'var(--cyan)' }}>frontend mastery</span> with React and Tailwind, deep <span style={{ color: 'var(--violet)' }}>DSA problem-solving</span> in C++ and Java, and growing full-stack expertise. I'm also actively exploring Machine Learning, with the goal of becoming an ML Engineer who bridges the gap between intelligent algorithms and beautiful interfaces.
+              I am currently learning backend development, APIs, and full-stack tooling while strengthening problem-solving with data structures and algorithms. My goal is to grow as a practical frontend developer who can contribute to real product teams.
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 28 }} className="about-grid">
               <div className="about-stat">
@@ -28,12 +28,12 @@ export default function About(){
               <div className="about-stat">
                 <div style={{ fontSize: 24, marginBottom: 6 }}>🧠</div>
                 <div style={{ fontWeight: 600, fontSize: 14, marginBottom: 4 }}>DSA</div>
-                <div style={{ fontSize: 12, color: 'var(--muted)' }}>200+ problems solved<br/>C++ & Java</div>
+                <div style={{ fontSize: 12, color: 'var(--muted)' }}>70+ problems solved<br/>C++ & Java</div>
               </div>
               <div className="about-stat">
                 <div style={{ fontSize: 24, marginBottom: 6 }}>🚀</div>
-                <div style={{ fontWeight: 600, fontSize: 14, marginBottom: 4 }}>Future Goal</div>
-                <div style={{ fontSize: 12, color: 'var(--muted)' }}>ML Engineer<br/>at top tech company</div>
+                <div style={{ fontWeight: 600, fontSize: 14, marginBottom: 4 }}>Career Goal</div>
+                <div style={{ fontSize: 12, color: 'var(--muted)' }}>Frontend internship experience<br/>and stronger backend skills</div>
               </div>
             </div>
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
@@ -56,27 +56,27 @@ export default function About(){
             <div style={{ width: '100%', maxWidth: 380 }}>
               <div style={{ marginBottom: 16 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6, fontSize: 13 }}>
-                  <span style={{ color: 'var(--text)', fontWeight: 500 }}>Frontend Development</span><span style={{ color: 'var(--cyan)', fontFamily: 'JetBrains Mono, monospace' }}>90%</span>
+                  <span style={{ color: 'var(--text)', fontWeight: 500 }}>Frontend Development</span><span style={{ color: 'var(--cyan)', fontFamily: 'JetBrains Mono, monospace' }}>82%</span>
                 </div>
-                <div className="skill-bar-wrap"><div className="skill-bar" data-width="90"></div></div>
+                <div className="skill-bar-wrap"><div className="skill-bar" data-width="82"></div></div>
               </div>
               <div style={{ marginBottom: 16 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6, fontSize: 13 }}>
-                  <span style={{ color: 'var(--text)', fontWeight: 500 }}>DSA & Problem Solving</span><span style={{ color: 'var(--violet)', fontFamily: 'JetBrains Mono, monospace' }}>80%</span>
+                  <span style={{ color: 'var(--text)', fontWeight: 500 }}>DSA & Problem Solving</span><span style={{ color: 'var(--violet)', fontFamily: 'JetBrains Mono, monospace' }}>68%</span>
                 </div>
-                <div className="skill-bar-wrap"><div className="skill-bar" data-width="80" style={{ background: 'linear-gradient(90deg,var(--violet),var(--pink))' }}></div></div>
+                <div className="skill-bar-wrap"><div className="skill-bar" data-width="68" style={{ background: 'linear-gradient(90deg,var(--violet),var(--pink))' }}></div></div>
               </div>
               <div style={{ marginBottom: 16 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6, fontSize: 13 }}>
-                  <span style={{ color: 'var(--text)', fontWeight: 500 }}>Full-Stack Development</span><span style={{ color: 'var(--cyan)', fontFamily: 'JetBrains Mono, monospace' }}>65%</span>
+                  <span style={{ color: 'var(--text)', fontWeight: 500 }}>Full-Stack Development</span><span style={{ color: 'var(--cyan)', fontFamily: 'JetBrains Mono, monospace' }}>45%</span>
                 </div>
-                <div className="skill-bar-wrap"><div className="skill-bar" data-width="65"></div></div>
+                <div className="skill-bar-wrap"><div className="skill-bar" data-width="45"></div></div>
               </div>
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6, fontSize: 13 }}>
-                  <span style={{ color: 'var(--text)', fontWeight: 500 }}>Machine Learning</span><span style={{ color: 'var(--violet)', fontFamily: 'JetBrains Mono, monospace' }}>35%</span>
+                  <span style={{ color: 'var(--text)', fontWeight: 500 }}>Machine Learning</span><span style={{ color: 'var(--violet)', fontFamily: 'JetBrains Mono, monospace' }}>15%</span>
                 </div>
-                <div className="skill-bar-wrap"><div className="skill-bar" data-width="35" style={{ background: 'linear-gradient(90deg,var(--violet),var(--pink))' }}></div></div>
+                <div className="skill-bar-wrap"><div className="skill-bar" data-width="15" style={{ background: 'linear-gradient(90deg,var(--violet),var(--pink))' }}></div></div>
               </div>
             </div>
           </div>
