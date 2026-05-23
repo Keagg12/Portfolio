@@ -5,7 +5,7 @@ export const skillsData = [
     color: 'var(--cyan)',
     icon: '🎨',
     items: [
-      { icon: '🌐', label: 'HTML5', level: 'Advanced' },
+      { icon: '', label: 'HTML5', level: 'Advanced' },
       { icon: '🎨', label: 'CSS3', level: 'Advanced' },
       { icon: '⚡', label: 'JavaScript', level: 'Intermediate' },
       { icon: '⚛️', label: 'React.js', level: 'Intermediate' },
